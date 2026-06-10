@@ -3,7 +3,7 @@ import google.generativeai as genai
 import os
 st.set_page_config(page_title="ketan_chatbot", page_icon="🤖")
 genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
-model=genai.GenerativeModel("gemini-flash-latest")
+model=genai.GenerativeModel("gemini-1.5-flash")
 st.title("Ketan's Chatbot")
 if "messages" not in st.session_state:
     st.session_state.messages = []
