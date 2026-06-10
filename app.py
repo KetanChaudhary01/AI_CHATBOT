@@ -1,7 +1,8 @@
 import streamlit as st
 import google.generativeai as genai 
+import os
 st.set_page_config(page_title="ketan_chatbot", page_icon="🤖")
-genai.configure(api_key=st.secrets["GEMINI_API_KEY"])
+genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model=genai.GenerativeModel("gemini-flash-latest")
 st.title("Ketan's Chatbot")
 if "messages" not in st.session_state:
